@@ -4,6 +4,8 @@ var app = express.createServer(express.logger());
 
 var buffer = fs.readFileSync('index.html');
 
+app.use(express.static(__dirname + '/public'));
+
 app.get('/', function(request, response) {
   response.send(buffer.toString());
 });
